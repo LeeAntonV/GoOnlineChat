@@ -1,0 +1,11 @@
+[build]
+cmd = "go build -o ./bin/online_chat_bot ./..."
+binary = "./bin/my-app"
+root = "./online_chat_bot"
+excludeDir = ["bin", "node_modules", "tmp", "vendor"]
+
+[log]
+log = "true"
+
+[web]
+port = ":8080"
