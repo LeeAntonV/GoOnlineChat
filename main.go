@@ -10,10 +10,10 @@ func main() {
 	//Log in and Sign up
 	router.POST("/registration", app.Registration)
 	router.GET("/authorization", app.Authorization)
+	router.GET("/get_profile", app.GetProfile)
 
 	//Websockets
 	router.GET("/get_message", app.GetMessageByID)
 	//Account statistics
-	router.GET("/is_friends", app.IsFriends)
 	router.Run("localhost:8000")
 }

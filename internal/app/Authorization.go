@@ -1,32 +1,47 @@
 package app
 
 import (
-	"fmt"
+	"database/sql"
+	"errors"
 	"github.com/gin-gonic/gin"
+	"log"
 	"net/http"
+	"os"
 )
 
-type Pattern struct {
-	ID        string `json:"id"`
-	Name      string `json:"Name"`
-	Password  string `json:"password"`
-	IsFriends bool   `json:"IsFriends"`
-}
+// TODO: add jwt token
 
-var ProfileAuth = []Pattern{
-	{ID: "1", Name: "Anton Lee", Password: "1234", IsFriends: true},
-	{ID: "2", Name: "Maksym Stashuk", Password: "1234", IsFriends: true},
+type UserData struct {
+	ID        int    `json:"id"`
+	CreatedAt string `json:"created_at"`
+	Email     string `json:"email"`
+	// Add other fields as needed
 }
 
 func Authorization(c *gin.Context) {
-	Name := c.GetHeader("name")
+	var user UserData
+	Email := c.GetHeader("email")
 	Password := c.GetHeader("password")
-	fmt.Println(Name + Password)
-	for _, prof := range ProfileAuth {
-		if prof.Name == Name && prof.Password == Password {
-			c.IndentedJSON(http.StatusAccepted, prof)
+
+	db, err := sql.Open("postgres", os.Getenv("DatabaseDSN"))
+	if err != nil {
+		log.Fatal("[ERROR] Problem with database connectivity: ", err)
+		return
+	}
+
+	defer db.Close()
+
+	query := "SELECT id, email, created_at FROM profile WHERE email = $1 AND hash = $2"
+	err = db.QueryRow(query, Email, Password).Scan(&user.ID, &user.Email, &user.CreatedAt)
+	if err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			c.JSON(404, gin.H{"error": "Wrong Credentials"})
 			return
 		}
+		c.JSON(500, gin.H{"error": "Database error"})
+		return
 	}
-	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "WrongCredentials"})
+
+	c.JSON(http.StatusOK, user)
+
 }

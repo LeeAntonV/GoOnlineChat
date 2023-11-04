@@ -3,8 +3,10 @@ package app
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"time"
 )
 
+// jwt token
 type MessagePattern struct {
 	Content string `json:"content"`
 }
@@ -21,6 +23,7 @@ var jsonic = []jso{
 
 func GetMessageByID(c *gin.Context) {
 	id := c.GetHeader("id")
+	time.Sleep(10 * time.Second)
 	for _, js := range jsonic {
 		if js.ID == id {
 			c.IndentedJSON(http.StatusOK, js)
