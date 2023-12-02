@@ -5,16 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e1b7e87-e9c5-4c6a-aba3-8cce8aaceca9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/internal/app/GetProfile.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/handlers/AuthMiddleware.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/handlers/Websocket.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/Authorization.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/app/Authorization.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/GetMessageByID.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/app/GetMessageByID.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/IsFriend.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/app/Registration.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/app/Registration.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/storage/00001_profile_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/internal/storage/migrations/00001_profile_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/air.toml" beforeDir="false" afterPath="$PROJECT_DIR$/air.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/app/Authorization.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/handlers/Authorization.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/app/GetMessageByID.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/handlers/GetMessageByID.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/app/GetProfile.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/handlers/GetProfile.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/app/Registration.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/handlers/Registration.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/build-errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/build-errors.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/tmp/main.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/main.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,11 +74,11 @@
       <recent name="C:\Users\Anton\online_chat_bot" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anton\online_chat_bot\templates" />
+      <recent name="C:\Users\Anton\online_chat_bot\internal" />
+      <recent name="C:\Users\Anton\online_chat_bot\internal\handlers" />
       <recent name="C:\Users\Anton\online_chat_bot\tmp\tmp" />
       <recent name="C:\Users\Anton\online_chat_bot\internal\storage\migrations" />
-      <recent name="C:\Users\Anton\online_chat_bot" />
-      <recent name="C:\Users\Anton\online_chat_bot\cmd" />
-      <recent name="C:\Users\Anton\online_chat_bot\cmd\tmp" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build example/main">

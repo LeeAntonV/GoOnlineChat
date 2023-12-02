@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Chat</title>
+</head>
+<body>
+<input type="text" id="messageInput" placeholder="Type your message">
+<button onclick="sendMessage()">Send</button>
+
+<ul id="chatOutput"></ul>
+
+<script>
+    const currentPath = window.location.pathname;
+
+    // Split the path into segments
+    const pathSegments = currentPath.split('/');
+
+    // Get the first path parameter
+    // const firstPathParam = pathSegments[1];
+
+    var input = document.getElementById("input");
+    var output = document.getElementById("output");
+    var socket = new WebSocket("ws://localhost:8000/ws");
+
+    const ws = new WebSocket('ws://localhost:8000/ws');
+
+    ws.onmessage = (event) => {
+        const chatOutput = document.getElementById('chatOutput');
+        const listItem = document.createElement('li');
+        listItem.textContent = event.data;
+        chatOutput.appendChild(listItem);
+    };
+
+    function sendMessage() {
+        const messageInput = document.getElementById('messageInput');
+        const message = messageInput.value;
+
+        ws.send(message);
+
+        messageInput.value = '';
+    }
+</script>
+</body>
+</html>

@@ -7,6 +7,6 @@ RUN go mod download
 
 COPY cmd ./cmd
 
-RUN go build -o /app/chat ./cmd/
+RUN go build -o /handlers/chat ./cmd/
 
 CMD ["/app/chat"]
